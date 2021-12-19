@@ -35,3 +35,19 @@ ridge_cv = cross_val_score(ridge, X, y, cv= 5)
 
 # Print the cross-validated scores
 print(ridge_cv)
+
+# Convert '?' to NaN
+df[df == "?"] = np.nan
+
+# Print the number of NaNs
+print(df.isnull().sum())
+
+# Print shape of original DataFrame
+print("Shape of Original DataFrame: {}".format(df.shape))
+
+# Drop missing values and print shape of new DataFrame
+df = df.dropna()
+
+# Print shape of new DataFrame
+print("Shape of DataFrame After Dropping All Rows with Missing Values: {}".format(df.shape))
+
